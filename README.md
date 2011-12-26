@@ -2,4 +2,4 @@
 
 ---
 
-* [vmp](vmp.snippet) : MVVMパターンにて、ViewModelのプロパティ定義
+* [vmp](/vmp.snippet) : MVVMパターンにて、ViewModelのプロパティ定義
