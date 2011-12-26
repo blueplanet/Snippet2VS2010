@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>MVVMProp</Title>
+			<Shortcut>vmp</Shortcut>
+			<Description>MVVMパターンのVMのプロパティ定義</Description>
+			<Author>Aoi Wakusei</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>プロパティの型</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>privateName</ID>
+					<ToolTip>プライベート変数名</ToolTip>
+					<Default>text</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>プロパティ名</ToolTip>
+					<Default>Text</Default>
+				</Literal>			
+				<Literal>
+					<ID>command</ID>
+					<ToolTip>コマンド名</ToolTip>
+					<Default>DisplayCommand</Default>
+				</Literal>							
+			</Declarations>
+			<Code Language="csharp"><![CDATA[private $type$ $privateName$;
+public $type$ $property$ 
+{ 
+	get { return $privateName$; }
+	set
+	{
+		if ($privateName$ == value)
+		{
+			return;
+		}
+
+		$privateName$ = value;
+		RaisePropertyChanged("$property$");
+		$command$.RaiseCanExecuteChanged();
+	}
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
